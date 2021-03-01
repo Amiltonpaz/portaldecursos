@@ -1,0 +1,17 @@
+
+  <!--h2 class="title">Nossos Cursos</!--h2-->
+  <div class="box-cards">
+    <div class="borda-card" *ngFor="let curso of lista">
+      <div class="card" style="width: 18rem;">
+        <img [src]="curso.foto" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">{{ curso.titulo }}</h5>
+          <p class="card-text">{{ curso.descricao }}</p>
+          <a href="#" class="btn btn-primary">Matricular</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="falha-ao-carregar" [hidden]="falhaAoCarregar">
+    <h2>Não foi possível carregar a lista de cursos no momento.</h2>
+  </div>

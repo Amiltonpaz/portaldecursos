@@ -1,0 +1,20 @@
+.container {
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  max-width: fit-content;
+  margin: auto auto 2vh auto;
+
+}
+
+.title {
+  padding: 5vh 5vh 5vh 0;
+  margin: auto;
+}
+
+
+
+

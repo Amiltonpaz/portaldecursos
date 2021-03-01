@@ -1,0 +1,60 @@
+
+
+.parallax-img {
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  background-attachment: scroll;
+  background: transparent;
+}
+
+
+.titulo {
+  height: 550px;
+  width: auto;
+  background-image: url('https://wallpapercave.com/wp/wp1838758.jpg');
+}
+
+.titulo h2 {
+  position: relative;
+  top: 230px;
+  font-size: 3rem;
+  text-align: center;
+  color: aliceblue;
+}
+
+.titulo p {
+  position: relative;
+  top: 250px;
+  text-align: center;
+}
+
+.bloco {
+  display: flex;
+  z-index: 10;
+  background-color: aliceblue;
+  position: sticky;
+  /*min-height: 100vh;*/
+  overflow-x: scroll;
+}
+
+.parallax2 {
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  background-color: black;
+ /* opacity: 80%; */
+  /* The image used */
+  background-image:url('../image/bg-home-2.jpg');
+
+  /* Set a specific height */
+  height: 70vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

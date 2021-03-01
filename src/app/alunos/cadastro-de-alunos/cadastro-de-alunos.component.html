@@ -1,0 +1,100 @@
+<div class="container">
+  <h2 class="title">Cadastro do Aluno</h2>
+   <form class="form-group" #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome"
+         #nome="ngModel" ngModel minlength=4 maxlength=20
+         [ngClass]="retornaClassesErro(nome)" required>
+
+        <div class="valid-feedback">
+          válido
+        </div>
+        <div class="invalid-feedback">
+          inválido
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="sobrenome" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="sobrenome"
+        name="sobrenome" #sobrenome="ngModel" ngModel minlength=3 maxlength=20
+         [ngClass]="retornaClassesErro(sobrenome)" required>
+        <div class="valid-feedback">
+          válido
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend"
+          #email="ngModel" ngModel name="email" email [ngClass]="retornaClassesErro(email)" required
+          [pattern]="customPatternEmail">
+          <div class="invalid-feedback">
+            Por favor, digite um e-mail válido.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ngModelGroup="endereco">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="id" class="form-label">Cep</label>
+          <input type="text" class="form-control" id="cep" #cep=ngModel ngModel name="cep"
+          minlength=8 maxlength=9 [ngClass]="retornaClassesErro(cep)" required
+          (blur)="pesquisaCep(cep.value,formulario)" mask="00000-000">
+          <div class="invalid-feedback">
+            Por favor, forneça um Cep válido.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" readonly class="form-control" id="cidade"
+          #cidade=ngModel ngModel name="cidade">
+
+        </div>
+        <div class="col-md-4">
+          <label for="estado" class="form-label">Estado</label>
+          <input type="text" readonly class="form-control" id="estado"
+          #estado=ngModel ngModel name="estado">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+            <label for="rua">Rua</label>
+            <input type="text" class="form-control" readonly id="rua" name="rua" #rua=ngModel ngModel>
+        </div>
+
+        <div class="col-4">
+          <label for="bairro">Bairro</label>
+          <input type="text" class="form-control" readonly id="bairro" name="bairro" #bairro=ngModel ngModel>
+        </div>
+        <div class="form-check-inline">
+          <label id="newsletter" for="radios" class="radio-inline">Newsletter</label>
+            <input type="radio" class="form-check-input" value="option1"  />Sim
+        </div>
+        <div class="form-check-inline">
+          <label id="newsletter" class="radio-inline"></label>
+            <input type="radio" class="form-check-input" value="option2" />Não
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="termo" id="check"
+            name="check"required>
+            <label class="form-check-label" for="popcorn">
+              Aceito os termos e condições.
+            </label>
+            <div class="invalid-feedback">
+              Você deve concordar com os termos antes de submeter as informações.
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="formulario.invalid">Cadastrar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <app-footer></app-footer>

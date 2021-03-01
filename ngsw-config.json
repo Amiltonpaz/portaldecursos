@@ -1,0 +1,68 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "appData": {
+
+  },
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "images",
+      "urls": [
+        "https://wallpapercave.com/wp/wp1838758.jpg",
+        "https://wallpapercave.com/wp/wp4048656.jpg",
+        "https://rafael.lv/wp-content/uploads/2015/01/Cordova-720x426.jpg",
+        "https://miro.medium.com/max/3840/1*6h1kck2QmGaC89ERN_W3UA.jpeg",
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fhdqwalls.com%2Fdownload%2F1920x1080%2Fstudent-study-stress&psig=AOvVaw2zqoNrnD3qcqlGfd8ZoflS&ust=1613323838649000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjRpuex5-4CFQAAAAAdAAAAABAE"
+
+      ],
+      "version": 1,
+      "cacheConfig": {
+        "maxSize": 500,
+        "maxAge": "30s",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "cursos",
+      "urls": [
+        "http://localhost:3000/cursos",
+        "http://localhost:3000/alunos"
+      ],
+      "version": 1,
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "30s",
+        "timeout": "5s"
+      }
+    }
+  ]
+}

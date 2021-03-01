@@ -1,0 +1,47 @@
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: #f1c40f;
+  overflow-x: hidden;
+  bottom: auto;
+}
+
+.my-md-5 {
+  margin-top: 0!important;
+}
+
+.row :nth-child(1) {
+  width: 24px;
+  margin: 15px 5px 15px 15px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .row :nth-child(1) {
+    width: 24px;
+    margin: 15px 5px 15px 15px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+
+  .row {
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    margin: auto;
+  }
+
+ .item {
+    margin: auto;
+  }
+
+  .item2 {
+    margin: auto;
+  }
+
+}

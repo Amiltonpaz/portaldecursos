@@ -1,0 +1,121 @@
+<form class="container" [formGroup]="formulario" (ngSubmit)="onSubmit()" >
+  <h2>Cadastre-se</h2>
+  <div class="row">
+    <div class="col-sm-4">
+
+      <label for="nome">Nome
+        <input type="text" class="form-control" id="nome" formControlName="nome">
+      </label>
+
+    </div>
+
+    <div class="col-sm-4">
+      <label for="email">Email
+        <input type="text" class="form-control" id="email" formControlName="email">
+      </label>
+    </div>
+
+    <div class="col-sm-4">
+
+      <label for="confirmaEmail">Confirmar Email
+        <input type="text" class="form-control" id="confirmaEmail" #confirmaEmail formControlName="confirmaEmail"
+        [ngClass]="retornaClasseErro('confirmaEmail')">
+      </label>
+      <div class="msg">
+        <small *ngIf="!formulario.controls.confirmaEmail.pristine" class=" alert-danger"> {{ verificaErro('confirmaEmail') }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+
+      <label for="senha"> Senha
+        <input type="text" class="form-control" id="senha" formControlName="senha">
+      </label>
+
+    </div>
+
+    <div class="col-sm-4">
+      <label for="confirmarSenha">Confirmar Senha
+        <input type="text" class="form-control" id="confirmarSenha" formControlName="confirmarSenha">
+      </label>
+    </div>
+
+    <div class="col-sm-4">
+
+      <label for="whatsapp"  >Whatsapp
+        <input type="text" class="form-control" id="whatsapp" formControlName="whatsapp">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+
+      <label for="cep"> Cep
+        <input type="text" class="form-control" id="cep" formControlName="cep" (blur)="buscaCep()">
+      </label>
+
+    </div>
+
+    <div class="col-sm-4">
+      <label for="rua">Rua
+        <input type="text" class="form-control" id="rua" formControlName="rua">
+      </label>
+    </div>
+
+    <div class="col-sm-4">
+
+      <label for="bairro"  >Bairro
+        <input type="text" class="form-control" id="bairro" formControlName="bairro">
+      </label>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+
+      <label for="cidade"> Cidade
+        <input type="text" class="form-control" id="cidade" formControlName="cidade">
+      </label>
+
+    </div>
+
+    <div class="col-sm-4">
+      <label for="estado">Estado
+        <input type="text" class="form-control" id="estado" formControlName="estado">
+      </label>
+    </div>
+
+    <div class="col-sm-4">
+
+      <label for="numero">Número
+        <input type="text" class="form-control" id="numero" formControlName="numero">
+      </label>
+
+    </div>
+  </div>
+  <div class="row-checkbox">
+
+    <label for="interesses" class="form-check-label">Interesses:
+
+      <div class="form-check" id="interesses" formArrayName="interesses" *ngFor="let item of formulario.controls.interesses.value; let i = index">
+
+        <input type="checkbox" class="form-check-input" [formControlName]="i">
+        <label class="form-check-label">{{ interesses[i] }}</label>
+
+      </div>
+
+      </label>
+  </div>
+
+  <div class="row-btn">
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </div>
+</form>
+<div>
+  {{ formulario.controls.confirmaEmail.errors | json }}
+</div>

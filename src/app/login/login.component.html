@@ -1,0 +1,26 @@
+
+
+<div class="bloco" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <h2 class="title">Login</h2>
+  <div class="form-floating campos mb-3">
+    <label for="floatingInput">Email</label>
+    <input class="form-control" type="email" formControlName="email"
+     id="floatingInput"  placeholder="name@example.com">
+  </div>
+
+  <div class="form-floating campos mb-3">
+    <label for="floatingPassword">Senha</label>
+    <input class="form-control" type="password" formControlName="senha"
+     id="floatingPassword" placeholder="Password" (keyup.enter)="onSubmit()">
+  </div>
+  <div class="botao">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Login</button>
+  </div>
+  <div class="link-cadastro">
+    <a routerLink="cadastro-usuarios">Ainda não é cadastrado? Clique aqui!</a>
+  </div>
+</div>
+<div>
+<router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

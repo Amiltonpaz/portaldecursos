@@ -1,0 +1,28 @@
+.container {
+  padding-top: 20vh;
+  padding-bottom: 2.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+}
+
+.col-12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10vh;
+}
+
+
+.needs-validation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

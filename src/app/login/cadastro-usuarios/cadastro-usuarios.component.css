@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: max-content;
+}
+
+.form-check-label {
+  padding-right: 30px;
+}
+
+.row-checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-btn {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+}
+
+.msg {
+  height: 10px;
+}
+
+@media screen and (max-width: 590px){
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: max-content;
+
+  }
+
+  .container.col-sm-4 {
+    margin: auto;
+  }
+
+  .row-checkbox {
+    display: flex;
+    flex-direction: column;
+  }
+}

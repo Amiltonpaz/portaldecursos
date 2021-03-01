@@ -1,0 +1,13 @@
+
+
+web-push send-notification --endpoint="https://fcm.googleapis.com/fcm/send/cjXyBNBVjso:AP…ibNY_q7N7KrE7_SBEfoAHEA93rGcEcbuUtYZj2CJEla8FlPMZ" --key="BPTksgwRnl4nJi1_A8jgLm6fyLpQQDWa5TRVC06g2IecqUa_53oZ61LmhKfIFRnXK1-gB2Df7vx-1vnCt3Fz_hI" --auth="vbFW1Xkm97bEYDIg9GST8A" --payload='{"teste":"hello world"}' --vapid-subject="http://localhost:4200/" --vapid-pubkey=BMD3qmN30HqE3vdtYsAjfrlRy8va--RdSgeGLx5gh65oaZyGtDFAD42fg9qJU3ogsfOIs7jSe5jQjsBvFmRZ_7s --vapid-pvtkey=VSb2nWHG1X3Js-t6_DJSjpd-KJrzHTcBvR0zkTD3IxU
+
+=======================================
+
+Public Key:
+BMD3qmN30HqE3vdtYsAjfrlRy8va--RdSgeGLx5gh65oaZyGtDFAD42fg9qJU3ogsfOIs7jSe5jQjsBvFmRZ_7s
+
+Private Key:
+VSb2nWHG1X3Js-t6_DJSjpd-KJrzHTcBvR0zkTD3IxU
+
+=======================================

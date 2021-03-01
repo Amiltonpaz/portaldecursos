@@ -1,0 +1,66 @@
+#navbarText {
+  flex-direction: row-reverse;
+}
+.navbar {
+  position: fixed;
+  min-width: 100%;
+  z-index: 50;
+}
+
+.navbar a img {
+  position: relative;
+  z-index: 70;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+  height: 60vh; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: #f1c40f; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #353434;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.link :hover {
+  background-color: #353434;
+  color: aliceblue;
+  transition: 0.3s;
+}
+
+.active {
+  border-bottom: #f1c40f solid 1px;
+
+}
+
+
+

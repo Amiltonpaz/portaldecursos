@@ -1,0 +1,38 @@
+.box-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.title {
+  text-align: center;
+  padding: 30px;
+}
+
+
+.borda-card {
+  padding: 20px;
+}
+
+@media screen and (max-width: 650px) {
+
+  .box-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    margin: auto;
+    margin-bottom: 5vh;
+    padding-bottom: 5vh;
+  }
+}
+
+.falha-ao-carregar {
+  color: grey;
+  padding: 30vh;
+  margin: auto;
+}

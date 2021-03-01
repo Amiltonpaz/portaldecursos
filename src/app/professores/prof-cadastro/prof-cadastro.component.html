@@ -1,0 +1,113 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Modal-->
+<div class="container">
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <h2 class="title">Cadastro do Professor</h2>
+
+      <div class="row">
+        <div class="col-sm form-group">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome" [ngClass]="retornaClasseErro('nome')">
+          <span class="invalid-feedback">{{ verificaErro('nome') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" formControlName="email" placeholder="exemplo@email.com.br" [ngClass]="retornaClasseErro('email')">
+          <span class="invalid-feedback">{{ verificaErro('email') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="senha">Senha</label>
+          <input type="password" class="form-control" id="senha" formControlName="senha" mask="000000" [ngClass]="retornaClasseErro('senha')">
+          <span class="invalid-feedback">{{ verificaErro('senha') }}</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm form-group">
+          <label for="nascimento">Nascimento</label>
+          <input type="date" class="form-control" id="nascimento"
+           formControlName="nascimento" placeholder="dd/mm/aaaa" [ngClass]="retornaClasseErro('nascimento')">
+           <span class="invalid-feedback">{{ verificaErro('nascimento') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="foto">Foto</label>
+          <input type="file" class="form-control"  id="foto" formControlName="foto" [ngClass]="retornaClasseErro('foto')">
+          <span class="invalid-feedback">{{ verificaErro('foto') }}</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm form-group">
+          <label for="cep">CEP</label>
+          <input type="text" class="form-control" id="cep" formControlName="cep" mask="00000-000" (blur)="pesquisaCep()" [ngClass]="retornaClasseErro('cep')">
+          <span class="invalid-feedback">{{ verificaErro('cep') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="numero">Número</label>
+          <input type="text" class="form-control" id="numero" formControlName="numero" mask="000" [ngClass]="retornaClasseErro('numero')">
+          <span class="invalid-feedback">{{ verificaErro('numero') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="bairro">Bairro</label>
+          <input type="text" class="form-control" id="bairro" formControlName="bairro" [ngClass]="retornaClasseErro('bairro')">
+          <span class="invalid-feedback">{{ verificaErro('bairro') }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm form-group">
+          <label for="rua">Rua</label>
+          <input type="text" class="form-control" id="rua" formControlName="rua" [ngClass]="retornaClasseErro('rua')">
+          <span class="invalid-feedback">{{ verificaErro('rua') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="cidade">Cidade</label>
+          <input type="text" class="form-control" id="cidade" formControlName="cidade" [ngClass]="retornaClasseErro('cidade')">
+          <span class="invalid-feedback">{{ verificaErro('cidade') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="uf">UF</label>
+          <input type="text" class="form-control" formControlName="uf" id="uf" [ngClass]="retornaClasseErro('uf')">
+          <span class="invalid-feedback">{{ verificaErro('uf') }}</span>
+        </div>
+        <div class="col-sm form-group">
+          <label for="estados">Estados</label>
+         <select class="form-control" formControlName="estado" id="estado" [ngClass]="retornaClasseErro('estado')">
+           <option *ngFor="let estado of estados | async" [value]="estado.sigla">{{ estado.nome }}</option>
+         </select>
+         <span class="invalid-feedback">{{ verificaErro('estado') }}</span>
+        </div>
+      </div>
+      
+        <div class="row form-check">
+          <input class="form-check-input" type="checkbox" value="" formControlName="termo" id="flexCheckDefault" [ngClass]="retornaClasseErro('termo')">
+          <label class="form-check-label" for="flexCheckDefault">
+            Aceito os termos e políticas de privacidade
+          </label>
+          <span class="invalid-feedback">{{ verificaErro('termo') }}</span>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+</div>
+<app-footer></app-footer>
+
+

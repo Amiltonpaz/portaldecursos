@@ -1,0 +1,36 @@
+GET http://localhost:3000/cursos
+
+
+###
+
+POST http://localhost:3000/cursos/ HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Ruby on Raills",
+    "foto": "https://miro.medium.com/max/3840/1*6h1kck2QmGaC89ERN_W3UA.jpeg",
+    "descricao": "Ruby on Rails é um framework livre que promete aumentar velocidade e facilidade no desenvolvimento de sites orientados a banco de dados, uma vez que é possível criar aplicações com base em estruturas pré-definidas. "
+}
+
+###
+PUT http://localhost:3000/cursos/3 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Java",
+    "foto": "https://besthqwallpapers.com/img/original/124614/java-metal-logo-grunge-programming-language-signs-blue-metal-background-java.jpg",
+    "descricao": "Conheça a linguagem da Oracle que é líder mundial em adesão pela comunidade de desenvolvedores e se torne um profissional."
+}
+
+###
+
+DELETE http://localhost:3000/cursos/5 HTTP/1.1
+content-type: application/json
+
+{
+
+}
+
+####
+
+GET https://servicodados.ibge.gov.br/api/v1/localidades/distritos

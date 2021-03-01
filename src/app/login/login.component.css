@@ -1,0 +1,39 @@
+.bloco {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10vh;
+  margin: auto;
+  padding-bottom: 10vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+}
+input {
+  margin: auto;
+  padding: 20px;
+  max-width: 30vw;
+  min-width: 20vw;
+}
+.campos {
+margin: auto;
+}
+
+.botao{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.link-cadastro {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+
+}
