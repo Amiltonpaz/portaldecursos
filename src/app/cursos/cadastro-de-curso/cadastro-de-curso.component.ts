@@ -1,5 +1,5 @@
+import { FirestoreService } from './../../services/firestore.service';
 import { DbProfessoresService } from './../../professores/services/db-professores.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { OnlineOfflineService } from './../../services/online-offline.service';
 import { Curso } from './../curso-model';
 import { DataCursosService } from './../data-cursos.service';
@@ -16,7 +16,7 @@ import { AbstractControl } from '@angular/forms';
 })
 export class CadastroDeCursoComponent implements OnInit {
 
-  curso = new Curso();
+  curso!: Curso;
 
   formulario!: FormGroup;
   listaProfessores!: any[];
@@ -27,8 +27,8 @@ export class CadastroDeCursoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dbCursos: DataCursosService,
+    private fireData: FirestoreService ,
     private onlineOffline: OnlineOfflineService,
-    private snackBar: MatSnackBar,
     private dbProf: DbProfessoresService) { }
 
   ngOnInit(): void {
@@ -36,11 +36,13 @@ export class CadastroDeCursoComponent implements OnInit {
       titulo: [null],
       foto: [null],
       descricao: [null],
-      professor: [null],
-      tags: this.buildTags()
+      professor: [null]
+      // tags: this.buildTags()
     });
 
-    this.getProfessores();
+   // this.getProfessores();
+
+
 
   }
 
@@ -69,23 +71,23 @@ export class CadastroDeCursoComponent implements OnInit {
 
     if (this.formulario.valid) {
 
-      this.curso.id = Math.random();
-      this.curso.titulo = this.formulario.controls.titulo.value;
-      this.curso.foto = this.formulario.controls.foto.value;
-      this.curso.descricao = this.formulario.controls.descricao.value;
-      this.curso.professor = this.formulario.controls.professor.value;
+      // this.curso.id = Math.random();
+      // this.curso.titulo = this.formulario.controls.titulo.value;
+      // this.curso.foto = this.formulario.controls.foto.value;
+      // this.curso.descricao = this.formulario.controls.descricao.value;
+      // this.curso.professor = this.formulario.controls.professor.value;
+
+      this.curso = this.formulario.value;
 
       if (this.onlineOffline.isOnline) {
         console.log('ONLINE');
-        this.dbCursos.postCurso(this.curso);
+        this.fireData.createCurso(this.curso);
+       // this.dbCursos.postCurso(this.curso);
         this.formulario.reset();
-        this.snackBar.open('Curso cadastrado com sucesso!', 'fechar', {duration: 5000});
 
       } else {
-        this.snackBar.open('Você está Offline!');
         this.dbCursos.salvarCursoIndexedDb(this.curso);
         this.formulario.reset();
-        this.snackBar.open('Curso cadastrado localmente com sucesso!', 'fechar', {duration: 5000});
       }
     }
 

@@ -1,11 +1,9 @@
-import { group } from '@angular/animations';
-import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { OnlineOfflineService } from './../../services/online-offline.service';
-import { IndexedDbService } from './../../services/indexedDb.service';
 import { Component, OnInit } from '@angular/core';
 import { ViaCepService } from 'src/app/services/via-cep.service';
 import { Dexie } from 'Dexie';
-import { NgForm, FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { NgForm, FormBuilder } from '@angular/forms';
 import { DbService } from 'src/app/services/db.service';
 import { Aluno } from '../aluno-model';
 

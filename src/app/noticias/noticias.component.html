@@ -1,0 +1,33 @@
+
+<div class="container">
+<h1>Consumo de notícias através da API Google News</h1>
+<br>
+  <article *ngFor="let artigo of artigos">
+    <h2>{{ artigo.title }}</h2>
+    <small><b><em>{{ artigo.author}}</em></b> | {{ artigo.publishedAt | date}} | <a href="{{ artigo.url }}"><em>Fonte</em></a></small>
+
+    <figure>
+      <img src="{{ artigo.urlToImage }}" *ngIf="artigo.urlToImage">
+      <figcaption>
+        {{ artigo.description }}
+      </figcaption>
+    </figure>
+
+    <a href="{{ artigo.url }}" target="_blank">
+      <p>{{ artigo.content }}</p>
+    </a>
+
+  </article>
+
+  <article *ngFor="let fonte of simples">
+    <h4>{{ fonte.name }}</h4>
+    <p>
+      {{ fonte.description }}
+    </p>
+    <a href="{{ fonte.url }}" >Fonte</a>
+     <br>
+  </article>
+  <div class="spinner-grow text-primary" role="status" *ngIf="!artigos">
+    <span class="visually-hidden"></span>
+  </div>
+</div>

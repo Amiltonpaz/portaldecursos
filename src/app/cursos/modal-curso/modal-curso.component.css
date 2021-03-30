@@ -1,0 +1,36 @@
+.container {
+  height: 80vh;
+}
+.modal-header {
+  padding-top: 0;
+}
+.img-curso {
+  height: 170px;
+  float: right;
+}
+.col {
+  max-width: min-content;
+}
+.modal-body {
+  height: 300px;
+}
+.modal-body-prof {
+  height: 210px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+}
+.star {
+  font-size: 2rem;
+  color: gold;
+}
+
+@media screen and (max-width: 500px) {
+.modal-body-prof {
+  height: 150px;
+}
+}
+
+

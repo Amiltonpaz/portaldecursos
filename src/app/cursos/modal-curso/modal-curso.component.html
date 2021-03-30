@@ -1,0 +1,106 @@
+<div class="container">
+
+  <nav ngbNav #nav="ngbNav" class="nav-tabs" >
+
+    <ng-container ngbNavItem>
+      <a ngbNavLink>O Curso</a>
+      <ng-template ngbNavContent>
+        <div class="modal-header">
+          <h5 class="modal-title">{{ curso.titulo }}</h5>
+         <app-ngb-rating class="star" [readonly]=true [max]="5" [rate]="curso.rating"></app-ngb-rating>
+        </div>
+        <div class="modal-body">
+          <img class="img-curso" src="{{ curso.foto }}">
+          <p>{{ curso.descriptionFull }}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="closeDialog()">Fechar</button>
+        </div>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Professor</a>
+      <ng-template ngbNavContent>
+        <div class="modal-header">
+          <div class="col-4">
+            <img src="{{ curso.professor.foto }}" class="avatar rounded-circle">
+            <app-ngb-rating class="star" [readonly]=true [max]="5" [rate]="curso.professor.rating"></app-ngb-rating>
+            <h5 class="modal-title">{{ curso.professor.nome }}</h5>
+
+            <small>Idade: {{ curso.professor.idade }}</small><br>
+
+            <div class="row" >
+              <div class="col" *ngFor="let turma of curso.professor.cursos">
+                <span class="badge bg-success">{{ turma }}</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="modal-body-prof">
+          <p>{{ curso.professor.sumario }}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="closeDialog()">Fechar</button>
+        </div>
+      </ng-template>
+    </ng-container>
+    <ng-container ngbNavItem>
+      <a ngbNavLink>Avaliações</a>
+      <ng-template ngbNavContent>
+        <div class="modal-header">
+          <h5 class="modal-title">Comentários</h5>
+
+        </div>
+        <div class="modal-body">
+          <ngb-accordion [closeOthers]="true">
+            <ngb-panel id="static-1">
+              <ng-template ngbPanelTitle>
+                <img src="  https://demos.creative-tim.com/argon-dashboard-pro/assets/img/theme/team-4.jpg"
+                  class="avatar rounded-circle">Autor
+              </ng-template>
+                <ng-template ngbPanelContent>
+                  <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                  labore sustainable VHS.
+                  </p>
+                </ng-template>
+              </ngb-panel>
+
+              <ngb-panel id="static-2">
+                <ng-template ngbPanelTitle>
+                  <span><img src="https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70"
+                     class="avatar rounded-circle">Autor</span>
+                </ng-template>
+                  <ng-template ngbPanelContent>
+                    <p>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+                    aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                    craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                    </p>
+                  </ng-template>
+                </ngb-panel>
+
+          </ngb-accordion>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="closeDialog()">Fechar</button>
+        </div>
+      </ng-template>
+
+    </ng-container>
+
+  </nav>
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+</div>

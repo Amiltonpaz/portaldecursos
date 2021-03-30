@@ -30,11 +30,11 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/bootstrap-star-rating/css/star-rating.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js"
+              "./node_modules/jquery/dist/jquery.js"
             ]
           },
           "configurations": {
@@ -55,13 +55,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "200kb",
+                  "maximumError": "400kb"
                 }
               ],
               "serviceWorker": true,

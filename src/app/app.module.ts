@@ -1,4 +1,7 @@
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { DropdownService } from './services/dropdown.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,21 +13,29 @@ import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
-import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 import { CadastroDeCursoComponent } from './cursos/cadastro-de-curso/cadastro-de-curso.component';
 import { CadastroDeAlunosComponent } from './alunos/cadastro-de-alunos/cadastro-de-alunos.component';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { ProfCadastroComponent } from './professores/prof-cadastro/prof-cadastro.component';
-import { ServiceWorkerModule, SwPush, SwUpdate } from '@angular/service-worker';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuSidebarComponent } from './menu-sidebar/menu-sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CadastroUsuariosComponent } from './login/cadastro-usuarios/cadastro-usuarios.component';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+import { NoticiasComponent } from './noticias/noticias.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import { ModalCursoComponent } from './cursos/modal-curso/modal-curso.component';
+import { CommonModule } from '@angular/common';
+import { NgbRatingComponent } from './ngb-rating/ngb-rating.component';
 
 
 @NgModule({
@@ -39,20 +50,29 @@ import { CadastroUsuariosComponent } from './login/cadastro-usuarios/cadastro-us
     ProfCadastroComponent,
     MenuSidebarComponent,
     FooterComponent,
-      CadastroUsuariosComponent
+    CadastroUsuariosComponent,
+    NoticiasComponent,
+    ModalCursoComponent,
+    NgbRatingComponent
    ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxParallaxScrollModule,
     FormsModule, NgxMaskModule.forRoot(),
     ReactiveFormsModule,
-    MatSnackBarModule,
-    BrowserAnimationsModule,
     HttpClientJsonpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    NgbModule,
+    ModalModule,
+    RatingModule,
+    CommonModule,
+    AlertModule,
+    BsDropdownModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-
 
   ],
 
@@ -60,28 +80,6 @@ import { CadastroUsuariosComponent } from './login/cadastro-usuarios/cadastro-us
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(update: SwUpdate, push: SwPush, snackbar: MatSnackBar) {
-
-   /* update.available.subscribe(update =>
-
-    console.log('Atualização disponível!'));
-    const snack = snackbar.open('Atualização disponível!', 'Reload');
-
-    snack.onAction().subscribe(() => {
-      window.location.reload();
-    });
-
-    push.messages.subscribe((msg) => {
-      console.log(msg);
-      snackbar.open(JSON.stringify(msg));
-    });
-    const key = 'BMD3qmN30HqE3vdtYsAjfrlRy8va--RdSgeGLx5gh65oaZyGtDFAD42fg9qJU3ogsfOIs7jSe5jQjsBvFmRZ_7s';
-    push.requestSubscription({serverPublicKey : key})
-    .then(pushSubscription => {
-      console.log(pushSubscription.toJSON());
-    });
-
-*/
-  }
+  constructor() {}
 }
 

@@ -4,14 +4,39 @@
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+}
 
+.card {
+  width: 255px;
+  height: 419px;
+}
+
+.card img {
+  height:170px;
 }
 
 .title {
-  text-align: center;
   padding: 30px;
-}
 
+}
+.card-title {
+  max-width: fit-content;
+  vertical-align: bottom;
+  margin-bottom: 0;
+}
+.star {
+  vertical-align: top;
+  max-width: fit-content;
+  font-size: 2rem;
+  color: gold;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+#bloco {
+  min-height: 50vh;
+}
 
 .borda-card {
   padding: 20px;
@@ -29,10 +54,4 @@
     margin-bottom: 5vh;
     padding-bottom: 5vh;
   }
-}
-
-.falha-ao-carregar {
-  color: grey;
-  padding: 30vh;
-  margin: auto;
 }

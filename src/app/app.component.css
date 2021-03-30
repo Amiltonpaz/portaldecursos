@@ -51,6 +51,10 @@
   margin-left: 50px;
 }
 
+.sidepanel a {
+  min-width: max-content;
+}
+
 .link :hover {
   background-color: #353434;
   color: aliceblue;
